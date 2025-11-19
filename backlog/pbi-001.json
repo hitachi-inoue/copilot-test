@@ -1,0 +1,87 @@
+{
+  "id": "PBI-001",
+  "title": "ユーザー登録機能の実装",
+  "description": "新規ユーザーがシステムにアカウントを登録できる機能を実装する",
+  "status": "Ready",
+  "priority": "High",
+  "estimatedPoints": 13,
+  "acceptanceCriteria": [
+    "ユーザーは名前、メールアドレス、パスワードを入力できる",
+    "入力値のバリデーションが実装されている",
+    "登録後、確認メールが送信される",
+    "重複するメールアドレスは登録できない"
+  ],
+  "tasks": [
+    {
+      "id": "TASK-001-01",
+      "title": "データベーススキーマの設計と作成",
+      "description": "ユーザー情報を格納するためのデータベーステーブルを設計・作成する",
+      "estimatedHours": 4,
+      "status": "TODO",
+      "assignee": null
+    },
+    {
+      "id": "TASK-001-02",
+      "title": "ユーザー登録APIエンドポイントの実装",
+      "description": "POST /api/users エンドポイントを実装し、ユーザー情報を受け取る",
+      "estimatedHours": 6,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-001-01"]
+    },
+    {
+      "id": "TASK-001-03",
+      "title": "入力バリデーションの実装",
+      "description": "メールアドレス形式、パスワード強度、必須項目のチェックを実装",
+      "estimatedHours": 4,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-001-02"]
+    },
+    {
+      "id": "TASK-001-04",
+      "title": "重複チェック機能の実装",
+      "description": "既存のメールアドレスとの重複をチェックする機能を実装",
+      "estimatedHours": 3,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-001-02"]
+    },
+    {
+      "id": "TASK-001-05",
+      "title": "確認メール送信機能の実装",
+      "description": "登録完了時に確認メールを送信する機能を実装",
+      "estimatedHours": 5,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-001-02"]
+    },
+    {
+      "id": "TASK-001-06",
+      "title": "ユーザー登録フロントエンド画面の実装",
+      "description": "登録フォームのUIを実装し、APIと連携させる",
+      "estimatedHours": 8,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-001-02"]
+    },
+    {
+      "id": "TASK-001-07",
+      "title": "単体テストの作成",
+      "description": "API、バリデーション、重複チェックの単体テストを作成",
+      "estimatedHours": 6,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-001-03", "TASK-001-04"]
+    },
+    {
+      "id": "TASK-001-08",
+      "title": "統合テストの作成",
+      "description": "エンドツーエンドの登録フローをテスト",
+      "estimatedHours": 4,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-001-06", "TASK-001-07"]
+    }
+  ]
+}
