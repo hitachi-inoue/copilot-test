@@ -1,0 +1,97 @@
+{
+  "id": "PBI-003",
+  "title": "商品検索機能の実装",
+  "description": "ユーザーがキーワードやカテゴリで商品を検索できる機能を実装する",
+  "status": "In Progress",
+  "priority": "Medium",
+  "estimatedPoints": 13,
+  "acceptanceCriteria": [
+    "キーワードによる全文検索ができる",
+    "カテゴリフィルターが適用できる",
+    "価格範囲でフィルタリングできる",
+    "検索結果がページネーションで表示される",
+    "検索結果の並び替えができる"
+  ],
+  "tasks": [
+    {
+      "id": "TASK-003-01",
+      "title": "検索インデックスの設計",
+      "description": "効率的な検索のためのデータベースインデックスを設計",
+      "estimatedHours": 3,
+      "status": "DONE",
+      "assignee": "developer-1"
+    },
+    {
+      "id": "TASK-003-02",
+      "title": "検索APIエンドポイントの実装",
+      "description": "GET /api/products/search エンドポイントを実装",
+      "estimatedHours": 8,
+      "status": "IN_PROGRESS",
+      "assignee": "developer-2",
+      "dependencies": ["TASK-003-01"]
+    },
+    {
+      "id": "TASK-003-03",
+      "title": "全文検索機能の実装",
+      "description": "商品名、説明、タグでの全文検索を実装",
+      "estimatedHours": 6,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-003-02"]
+    },
+    {
+      "id": "TASK-003-04",
+      "title": "フィルター機能の実装",
+      "description": "カテゴリ、価格範囲、その他の属性でフィルタリング機能を実装",
+      "estimatedHours": 5,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-003-02"]
+    },
+    {
+      "id": "TASK-003-05",
+      "title": "ソート機能の実装",
+      "description": "価格、人気度、新着順などのソート機能を実装",
+      "estimatedHours": 4,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-003-02"]
+    },
+    {
+      "id": "TASK-003-06",
+      "title": "ページネーション機能の実装",
+      "description": "検索結果のページネーションを実装",
+      "estimatedHours": 3,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-003-02"]
+    },
+    {
+      "id": "TASK-003-07",
+      "title": "検索画面UIの実装",
+      "description": "検索フォーム、フィルター、結果表示のUIを実装",
+      "estimatedHours": 10,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-003-02"]
+    },
+    {
+      "id": "TASK-003-08",
+      "title": "検索パフォーマンステストの実施",
+      "description": "大量データでの検索パフォーマンステストを実施",
+      "estimatedHours": 4,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-003-03", "TASK-003-04", "TASK-003-05"]
+    },
+    {
+      "id": "TASK-003-09",
+      "title": "単体・統合テストの作成",
+      "description": "検索機能の単体テストと統合テストを作成",
+      "estimatedHours": 6,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-003-07"]
+    }
+  ]
+}

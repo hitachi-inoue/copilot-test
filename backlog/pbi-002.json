@@ -1,0 +1,77 @@
+{
+  "id": "PBI-002",
+  "title": "ログイン機能の実装",
+  "description": "登録済みユーザーがメールアドレスとパスワードでログインできる機能を実装する",
+  "status": "Ready",
+  "priority": "High",
+  "estimatedPoints": 8,
+  "acceptanceCriteria": [
+    "ユーザーはメールアドレスとパスワードでログインできる",
+    "認証トークンが発行される",
+    "ログイン失敗時は適切なエラーメッセージが表示される",
+    "パスワードは安全に保存される（ハッシュ化）"
+  ],
+  "tasks": [
+    {
+      "id": "TASK-002-01",
+      "title": "パスワードハッシュ化機能の実装",
+      "description": "bcryptを使用してパスワードを安全にハッシュ化する機能を実装",
+      "estimatedHours": 3,
+      "status": "TODO",
+      "assignee": null
+    },
+    {
+      "id": "TASK-002-02",
+      "title": "認証トークン生成機能の実装",
+      "description": "JWTトークンを生成する機能を実装",
+      "estimatedHours": 4,
+      "status": "TODO",
+      "assignee": null
+    },
+    {
+      "id": "TASK-002-03",
+      "title": "ログインAPIエンドポイントの実装",
+      "description": "POST /api/auth/login エンドポイントを実装",
+      "estimatedHours": 5,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-002-01", "TASK-002-02"]
+    },
+    {
+      "id": "TASK-002-04",
+      "title": "ログイン画面の実装",
+      "description": "ログインフォームのUIを実装し、APIと連携させる",
+      "estimatedHours": 6,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-002-03"]
+    },
+    {
+      "id": "TASK-002-05",
+      "title": "セッション管理機能の実装",
+      "description": "トークンを使用したセッション管理を実装",
+      "estimatedHours": 4,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-002-02"]
+    },
+    {
+      "id": "TASK-002-06",
+      "title": "単体テストの作成",
+      "description": "認証ロジックの単体テストを作成",
+      "estimatedHours": 4,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-002-03"]
+    },
+    {
+      "id": "TASK-002-07",
+      "title": "統合テストの作成",
+      "description": "ログインフローの統合テストを作成",
+      "estimatedHours": 3,
+      "status": "TODO",
+      "assignee": null,
+      "dependencies": ["TASK-002-04", "TASK-002-06"]
+    }
+  ]
+}
